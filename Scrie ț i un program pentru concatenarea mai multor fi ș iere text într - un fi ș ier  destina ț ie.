@@ -1,0 +1,24 @@
+
+
+#include <stdio.h>
+
+
+
+int main()
+{
+     int a;
+       FILE *f,*g,*x;
+f = fopen("write.txt", "w");
+g = fopen("test.txt", "r");
+while((a = fgetc(g))!= EOF)
+fprintf(f,"%c",a);
+x= fopen("test2.txt", "r");
+while((a = fgetc(x))!= EOF)
+fprintf(f,"%c",a);
+
+fclose(f);
+fclose(g);
+fclose(x);
+        return 0;
+}
+
