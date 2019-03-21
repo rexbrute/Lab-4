@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    FILE *f1 = fopen("*file1.txt", "r");
+    FILE *fw = fopen("*file_out.txt", "w");
+    int ch = fgetc(f1);
+    int a;
+    int c;
+    char b;
+    while(ch = -1){
+         fscanf(f1, "%d%c%d", &a, &b, &c);
+         printf("%d %c %d\n",a,b,c);
+
+    }
+
+        while(ch = -1)
+        {
+            fscanf(f1, "%d%c%d", &a, &b, &c);
+            if(b=='+')
+                fprintf(fw,"%d + %d=%d",a,c,a+c);
+            if(b=='-')
+                fprintf(fw,"%d - %d=%d",a,c,a-c);
+            if(b=='/')
+                fprintf(fw,"%d / %d=%d",a,c,a/c);
+            if(b=='*')
+                fprintf(fw,"%d * %d=%d",a,c,a*c);
+                ch = fgetc(f1);
+        };
+
+
+
+        printf("GATA");
+        fclose(fw);
+        return 0;
+    }
